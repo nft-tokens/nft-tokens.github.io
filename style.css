@@ -1,4 +1,5 @@
 :root {
+    --color-dark: #12121f;
     --color-bright: #32323f;
 }
 
@@ -50,7 +51,7 @@ section {
 code {
     word-wrap: break-word;
     word-break: break-all;
-    background-color: #12121f;
+    background-color: var(--color-dark);
     font-weight: 100;
 }
 
@@ -72,11 +73,11 @@ code {
 }
 
 .gallery > * > img {
-    border-radius: 0.5rem;
+    pointer-events: none;
 }
 
 .gallery > *:hover > img {
-    background-color: #32323f;
+    background-color: var(--color-bright);
 }
 
 .gallery > * > :not(.info) {
@@ -120,4 +121,34 @@ section.spacer::after {
     width: 50%;
     height: 2px;
     background-color: var(--color-bright);
+}
+
+.stock {
+    display: inherit;
+    border-radius: 0.3rem;
+    background-color: var(--color-dark);
+}
+
+.stock.instock::after {
+    content: "Available";
+    color: greenyellow;
+}
+
+.stock.sold::after {
+    content: "Sold";
+    color: orange;
+}
+
+
+footer {
+    padding: 0 3rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+footer > *:not(:last-child) {
+    margin-bottom: 1rem;
 }
