@@ -138,7 +138,7 @@ section.spacer::after {
 
 .stock.sold::after {
     content: "Sold";
-    color: orange;
+    color: orangered;
 }
 
 
