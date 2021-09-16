@@ -63,7 +63,6 @@ code {
     flex-wrap: wrap;
     margin-top: 2rem;
     gap: 1rem;
-
 }
 
 .gallery > * {
@@ -157,4 +156,72 @@ footer {
 
 footer > *:not(:last-child) {
     margin-bottom: 1rem;
+}
+
+#preview, #preview > .preview_window, #preview > .preview_window > div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#preview > .preview_window {
+    background-color: var(--color-dark);
+    width: 1200px;
+    height: 1200px;
+    border: 1rem solid var(--color-bright);
+
+    position: relative;
+    font-size: 2.5rem;
+}
+
+#preview > .preview_window > div:first-child {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+}
+
+#preview > .preview_window > div:last-child {
+    align-items: flex-end;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    text-align: right;
+}
+
+#preview > .preview_window > div:last-child img {
+    height: 5rem;
+}
+
+#preview > .preview_window > div:last-child code {
+    padding: 0;
+    opacity: 0.5;
+    border-radius: .5rem;
+}
+
+
+.blockchain {
+    background-color: var(--color-bright);
+    padding: 0 1rem;
+    border-radius: 3px;
+}
+
+.masspreview {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    height: min-content;
+}
+
+.masspreview > div > img {
+    width: 20rem
+}
+
+.masspreview > div > .info >  h3 {
+    display: none;
+}
+
+.masspreview > div > .info > *:not(h3) {
+    display: none;
 }
