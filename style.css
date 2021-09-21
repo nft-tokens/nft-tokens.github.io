@@ -1,6 +1,6 @@
 :root {
-    --color-dark: #12121f;
-    --color-bright: #32323f;
+    --color-neutral: #32323f;
+    --color-negative: #12121f;
 }
 
 html {
@@ -21,12 +21,10 @@ img {
 }
 
 body {
-    background-color: #21212f;
+    background-color: var(--color-negative);
     color: #eef;
     font-family: 'Azeret Mono', monospace;
     font-size: 1.6rem;
-
-    margin: 5rem 0;
 }
 
 header {
@@ -34,7 +32,13 @@ header {
     flex-direction: column;
     align-items: center;
     font-size: 1.6rem;
-    text-align: center;
+    justify-content: center;
+
+    background-image: url("images/background.png");
+    background-size: cover;
+    background-position-y: center;
+    image-rendering: pixelated;
+    height: 50vh;
 }
 
 header > img {
@@ -52,7 +56,7 @@ section {
 code {
     word-wrap: break-word;
     word-break: break-all;
-    background-color: var(--color-dark);
+    background-color: var(--color-neutral);
     font-weight: 100;
     padding: 0 1rem;
 }
@@ -82,7 +86,7 @@ code {
 }
 
 .gallery > *:hover > img {
-    background-color: var(--color-bright);
+    background-color: var(--color-neutral);
 }
 
 .gallery > * > :not(.info) {
@@ -97,7 +101,7 @@ code {
     visibility: hidden;
     opacity: 0;
     top: 100%;
-    background-color: var(--color-bright);
+    background-color: var(--color-neutral);
 }
 
 .gallery > * > .info > * {
@@ -125,13 +129,13 @@ section.spacer::after {
     display: flex;
     width: 50%;
     height: 2px;
-    background-color: var(--color-bright);
+    background-color: var(--color-neutral);
 }
 
 .stock {
     display: inherit;
     border-radius: 0.3rem;
-    background-color: var(--color-dark);
+    background-color: var(--color-negative);
 }
 
 .stock.instock::after {
@@ -147,7 +151,7 @@ section.spacer::after {
 
 footer {
     padding: 0 3rem;
-    margin-top: 5rem;
+    margin: 5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -166,10 +170,10 @@ footer > *:not(:last-child) {
 }
 
 #preview > .preview_window {
-    background-color: var(--color-dark);
+    background-color: var(--color-negative);
     width: 1200px;
     height: 1200px;
-    border: 1rem solid var(--color-bright);
+    border: 1rem solid var(--color-neutral);
 
     position: relative;
     font-size: 2.5rem;
@@ -202,7 +206,7 @@ footer > *:not(:last-child) {
 
 
 .blockchain {
-    background-color: var(--color-bright);
+    background-color: var(--color-neutral);
     padding: 0 1rem;
     border-radius: 3px;
 }
