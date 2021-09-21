@@ -1,6 +1,6 @@
 let counter = document.querySelector("#counter");
 
-var countDownDate = new Date("Sep 28, 2021 20:00:00").getTime();
+var countDownDate = new Date("Sep 23, 2021 20:00:00").getTime();
 
 var x = setInterval(function() {
 
