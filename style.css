@@ -62,11 +62,16 @@ code {
 }
 
 .gallery {
+    /*
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    */
     margin-top: 2rem;
     gap: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))
 }
 
 .gallery > * {
@@ -99,7 +104,6 @@ code {
 
 .gallery > * > .info {
     z-index: 3;
-    padding: 1rem 0.5rem;
     position: absolute;
     transition: all .3s;
     visibility: hidden;
@@ -109,6 +113,8 @@ code {
     border-radius: 0.2rem;
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
     max-width: 90vw;
 }
 
@@ -116,10 +122,12 @@ code {
     word-break: break-all;
 }
 
-.gallery > * > .info > * {
-    margin: 0.5rem;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
+.gallery > div > .info > *:not(code) {
+    padding: 0.5rem;
+
+    width: auto;
+    border-radius: 0.3rem;
+    background-color: var(--color-negative);
 }
 
 .gallery > *:hover > .info {
@@ -154,10 +162,7 @@ section.spacer::after {
 
 .stock {
     display: inherit;
-    width: auto;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    background-color: var(--color-negative);
+
 }
 
 .stock.instock::after {
@@ -169,6 +174,29 @@ section.spacer::after {
     content: "Sold";
     color: orangered;
 }
+
+.price {
+    width: auto;
+    display: flex;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    color: greenyellow; 
+    background-color: var(--color-negative);
+}
+
+.price::after {
+    display: inherit;
+    margin-left: 0.5rem;
+}
+
+.price.ada::after {
+    content: "ADA";
+}
+
+.price.erg::after {
+    content: "ERG";
+}
+
 
 
 footer {
@@ -250,4 +278,23 @@ footer > *:not(:last-child) {
 
 .masspreview > div > .info > *:not(h3) {
     display: none;
+}
+
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.list > .row {
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
 }
