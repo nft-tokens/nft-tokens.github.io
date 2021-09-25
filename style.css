@@ -234,6 +234,12 @@ footer > *:not(:last-child) {
     height: 70%;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+#preview > .preview_window > div:first-child img {
+    width: 3px;
+    height: 3px;
 }
 
 #preview > .preview_window > div:last-child {
@@ -242,6 +248,7 @@ footer > *:not(:last-child) {
     bottom: 2rem;
     right: 2rem;
     text-align: right;
+    gap: 0.5rem
 }
 
 #preview > .preview_window > div:last-child img {
